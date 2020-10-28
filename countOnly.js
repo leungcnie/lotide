@@ -12,7 +12,8 @@ const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
-    if (itemsToCount[item]) {
+    if (itemsToCount[item]) { //if item exists in itemsToCount
+// if count for that item hasn't already been added to result, add it, otherwise increment existing value
       if (results[item]) {
         results[item] ++;
       } else {
