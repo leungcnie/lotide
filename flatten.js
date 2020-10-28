@@ -10,7 +10,9 @@ const flatten = (array) => {
   })
   strings = strings.split(",").slice(0, -1);
   strings.forEach(str => {
-    output.push(Number(str));
+    if (str !== "") {
+      output.push(Number(str));
+    }
   });
   return output;
 }
@@ -35,4 +37,4 @@ const eqArrays = (arr1, arr2) => {
 // TEST CODE
 assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 assertArraysEqual(flatten([[]]), []);
-assertArraysEqual(flatten([1, 2, [], 3]) [1, 2, 3]);
+assertArraysEqual(flatten([1, 2, [], 3]), [1, 2, 3]);
