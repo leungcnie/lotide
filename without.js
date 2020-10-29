@@ -10,9 +10,9 @@ const without = (source, itemsToRemove) => {
 
 const assertArraysEqual = (arr1, arr2) => {
   if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: [${arr1}] is equal to [${arr2}]`);
+    console.log(`✅✅✅ Assertion Passed: [${arr1}] === [${arr2}]`);
   } else {
-    return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] is not equal to [${arr2}]`);
+    return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`);
   }
 }
 
