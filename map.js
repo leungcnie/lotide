@@ -42,4 +42,5 @@ assertArraysEqual(results3, ["1", "2", "3"]);
 const results4 = map([1, "a", true], item => typeof item)
 assertArraysEqual(results4, ["number", "string", "boolean"])
 
+assertArraysEqual(results1, words.map(word => word[0]));
 
