@@ -22,10 +22,12 @@ const eqArrays = (arr1, arr2) => {
 const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {
-    if (results[sentence.charAt(i)]) {
-      results[sentence.charAt(i)].push(i);
-    } else {
-      results[sentence.charAt(i)] = [i];
+    if (sentence.charAt(i) !== " ") {
+      if (results[sentence.charAt(i)]) {
+        results[sentence.charAt(i)].push(i);
+      } else {
+        results[sentence.charAt(i)] = [i];
+      }
     }
   }
   return results;
@@ -33,6 +35,7 @@ const letterPositions = function(sentence) {
 
 // TEST CODE
 const example = letterPositions("hello a");
+console.log(example);
 assertArraysEqual(example["h"], [0]);
 assertArraysEqual(example["e"], [1]);
 assertArraysEqual(example["l"], [2, 3]);
