@@ -22,10 +22,10 @@ const eqArrays = (arr1, arr2) => {
 const takeUntil = (array, callback) => {
   const output = [];
   for (const element of array) {
-    if (!callback(element)) {
-      output.push(element);
-    } else {
+    if (callback(element)) {
       break;
+    } else {
+      output.push(element);
     }
   }
   return output;
