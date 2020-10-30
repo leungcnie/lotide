@@ -43,3 +43,7 @@ assertArraysEqual(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]);
 const data3 = [1, 2];
 const results3 = takeUntil(data3, x => x < 0);
 assertArraysEqual(results3, [1, 2]);
+
+const data4 = [];
+const results4 = takeUntil(data4, x => x < 0);
+assertArraysEqual(results4, []);
