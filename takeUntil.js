@@ -21,10 +21,12 @@ const eqArrays = (arr1, arr2) => {
 
 const takeUntil = (array, callback) => {
   const output = [];
-  let i = 0;
-  while (!callback(array[i])) {
-    output.push(array[i]);
-    i++
+  for (const element of array) {
+    if (!callback(element)) {
+      output.push(element);
+    } else {
+      break;
+    }
   }
   return output;
 }
@@ -38,3 +40,6 @@ const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Re
 const results2 = takeUntil(data2, x => x === ',');
 assertArraysEqual(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]);
 
+const data3 = [1, 2];
+const results3 = takeUntil(data3, x => x < 0);
+assertArraysEqual(results3, [1, 2]);
