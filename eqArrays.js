@@ -26,3 +26,5 @@ assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays([1, 2, 3], [1, 4, 5]), false);
 assertEqual(eqArrays(["a", "b"], ["a", "b"]), true);
 assertEqual(eqArrays([1, 2, 3], []), false);
+
+module.exports = eqArrays;
