@@ -10,6 +10,8 @@ const flatten = (array) => {
   return output;
 }
 
+module.exports = flatten;
+
 // FIRST ATTEMPT: tried to avoid using 2 nested loops but got too messy 
 // const flatten = (array) => {
 //   let output = [];
@@ -30,30 +32,30 @@ const flatten = (array) => {
 //   return output;
 // }
 
-const assertArraysEqual = (arr1, arr2) => {
-  if (eqArrays(arr1, arr2)) {
-    return console.log(`✅✅✅ Assertion Passed: [${arr1}] === [${arr2}]`);
-  } else {
-    return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`);
-  }
-}
+// const assertArraysEqual = (arr1, arr2) => {
+//   if (eqArrays(arr1, arr2)) {
+//     return console.log(`✅✅✅ Assertion Passed: [${arr1}] === [${arr2}]`);
+//   } else {
+//     return console.log(`🛑🛑🛑 Assertion Failed: [${arr1}] !== [${arr2}]`);
+//   }
+// }
 
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
+// const eqArrays = (arr1, arr2) => {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   } else {
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr1[i] !== arr2[i]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+// };
 
-// TEST CODE
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten([[]]), []);
-assertArraysEqual(flatten([1, 2, [], 3]), [1, 2, 3]);
-assertArraysEqual(flatten(["a", "b", [], "c"]), ["a", "b", "c"]);
-assertArraysEqual(flatten(["a", true, 1, [false, 2]]), ["a", true, 1, false, 2]);
+// // TEST CODE
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([[]]), []);
+// assertArraysEqual(flatten([1, 2, [], 3]), [1, 2, 3]);
+// assertArraysEqual(flatten(["a", "b", [], "c"]), ["a", "b", "c"]);
+// assertArraysEqual(flatten(["a", true, 1, [false, 2]]), ["a", true, 1, false, 2]);

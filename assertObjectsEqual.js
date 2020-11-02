@@ -1,3 +1,5 @@
+const eqObjects = require('./eqObjects');
+
 // FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
@@ -8,70 +10,72 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
+module.exports = assertObjectsEqual;
 
-const eqObjects = function(object1, object2) {
-  if (Object.keys(object1).length === Object.keys(object2).length) {
-    for (const key in object1) {
-      if (Array.isArray(object1[key])) {
-        if (!eqArrays(object1[key], object2[key])) {
-          return false;
-        }
-      } else if (object1[key] !== object2[key]) {
-        return false;
-      }
-    }
-    return true;
-  } else {
-    return false;
-  }
-};
+// const eqArrays = (arr1, arr2) => {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   } else {
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr1[i] !== arr2[i]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+// };
 
-// TEST CODE
-const test = {
-  a: 1,
-  b: 2
-};
+// const eqObjects = function(object1, object2) {
+//   if (Object.keys(object1).length === Object.keys(object2).length) {
+//     for (const key in object1) {
+//       if (Array.isArray(object1[key])) {
+//         if (!eqArrays(object1[key], object2[key])) {
+//           return false;
+//         }
+//       } else if (object1[key] !== object2[key]) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-const test2 = {
-  a: 1,
-  b: 2
-};
+// // TEST CODE
+// const test = {
+//   a: 1,
+//   b: 2
+// };
 
-const test3 = {
-  b: 2,
-  a: 1
-};
+// const test2 = {
+//   a: 1,
+//   b: 2
+// };
 
-const test4 = {
-  c: 3,
-  d: 4
-}
+// const test3 = {
+//   b: 2,
+//   a: 1
+// };
 
-const test5 = {};
-const test6 = {};
+// const test4 = {
+//   c: 3,
+//   d: 4
+// }
 
-const test7 = {
-  a: 1,
-  b: "2"
-}
+// const test5 = {};
+// const test6 = {};
 
-// should pass
-assertObjectsEqual(test, test2);
-assertObjectsEqual(test, test3);
-assertObjectsEqual(test5, test6)
-// should fail
-assertObjectsEqual(test, test4);
-assertObjectsEqual(test, test5);
-assertObjectsEqual(test, test7);
+// const test7 = {
+//   a: 1,
+//   b: "2"
+// }
+
+// // should pass
+// assertObjectsEqual(test, test2);
+// assertObjectsEqual(test, test3);
+// assertObjectsEqual(test5, test6)
+// // should fail
+// assertObjectsEqual(test, test4);
+// assertObjectsEqual(test, test5);
+// assertObjectsEqual(test, test7);
