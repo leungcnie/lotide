@@ -2,21 +2,21 @@ const assert = require('chai').assert.deepEqual;
 const tail = require('../tail');
 
 describe("#tail", () => {
-
+  it("should not modify the original array", () => {
+    const input = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(input);
+    assert(input.length, 3);
+  });
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    const input = [1, 2, 3];
+    assert(tail(input), [2, 3]);
+  });
+  it("returns [] for ['a']", () => {
+    const input = ['a'];
+    assert(tail(input), []);
+  });
+  it("returns [] for []", () => {
+    const input = [];
+    assert(tail(input), []);
+  });
 })
-// // TEST CODE
-// // Test Case 1: Check the returned array elements
-// const result = tail(["Hello", "Lighthouse", "Labs"]);
-// assertEqual(result.length, 2); // ensure we get back two elements
-// assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-// assertEqual(result[1], "Labs"); // ensure second element is "Labs"
-// // Check if original array is modified
-// const words = ["Yo Yo", "Lighthouse", "Labs"];
-// tail(words);
-// assertEqual(words.length, 3); // original array should still have 3 elements!
-// // 1 element array
-// const one = ["nyeh"];
-// assertEqual(tail(one).length, 0); // should be empty
-// // Empty array
-// const empty = [];
-// assertEqual(tail(empty).length, 0);
