@@ -18,22 +18,22 @@ const map = require('./map');
 const takeUntil = require('./takeUntil');
 
 module.exports = {
-  head:   head,
-  tail:   tail,
-  middle: middle,
-  assertArraysEqual: assertArraysEqual,
-  assertEqual: assertEqual,
-  eqArrays: eqArrays,
+  head,
+  tail,
+  middle,
+  assertArraysEqual,
+  assertEqual,
+  eqArrays,
   // not previously refactored
-  flatten: flatten,
-  countOnly: countOnly,
-  letterPositions: letterPositions,
-  findKeyByValue: findKeyByValue,
-  eqObjects: eqObjects,
+  flatten,
+  countOnly,
+  letterPositions,
+  findKeyByValue,
+  eqObjects,
   // not mentioned
-  assertObjectsEqual: assertObjectsEqual,
-  countLetters: countLetters,
-  findKey: findKey,
-  map: map,
-  takeUntil: takeUntil,
+  assertObjectsEqual,
+  countLetters,
+  findKey,
+  map,
+  takeUntil,
 };
