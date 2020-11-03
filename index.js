@@ -16,6 +16,7 @@ const countLetters = require('./countLetters');
 const findKey = require('./findKey');
 const map = require('./map');
 const takeUntil = require('./takeUntil');
+const without = require('./without');
 
 module.exports = {
   head,
@@ -36,4 +37,5 @@ module.exports = {
   findKey,
   map,
   takeUntil,
+  without
 };
